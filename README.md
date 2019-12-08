@@ -41,6 +41,8 @@ curl -s --request DELETE --url http://127.0.0.1:5000/user/Kirby
 
 ## virtual environment
 
+>>> TODO
+
 I am experimenting with a pipenv/virtualenv  setup, instead of a global one.  I am currently working on a windows 10
  environment, which requires fixing the paths for all the tools like pip and virtualenv.
 
