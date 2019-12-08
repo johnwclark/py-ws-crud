@@ -4,28 +4,11 @@ a simple python crud web service
 
 ## requirements
 
-## virtual environment
+This only needs flask-restful and its dependencies.
 
-I am assuming that you are using a pipenv/virtualenv  setup, instead of a global one.
-
-Set this up once.
-
-```bash
-virtualenv venv
+```cmd
+pip install flask-restful
 ```
-
-Now use the activate and deactivate scripts as needed.
-
-```bash
-venv\Scripts\activate.bat
-venv\Scripts\deactivate.bat
-```
-
-Source links
-
-<https://docs.python.org/3/tutorial/venv.html>
-
-<https://docs.python-guide.org/dev/virtualenvs/>
 
 ## this is based on this example
 
@@ -33,25 +16,51 @@ Source links
 
 <https://auth0.com/blog/developing-restful-apis-with-python-and-flask/>
 
+<https://flask-restful.readthedocs.io/en/0.3.5/quickstart.html>
+
 ## testing the web service
 
-There are nicer visual tools like postman or insomnia, but I am going with 
-curl for this, so it can be scripted.
+There are nicer visual tools like postman or insomnia, but I am going with curl for this, so it can be scripted.
 
-### For PUT request
-
-```bash
-curl --request PUT --url http://localhost:8080/put --header 'content-type: application/x-www-form-urlencoded' --data 'bar=baz&foo=foo1'
-```
-
-### For POST request
+Get the full list, and try one user that is present and one that isn't
 
 ```bash
-curl --request POST --url http://localhost:8080/post --header 'content-type: application/x-www-form-urlencoded' --data 'bar=baz&foo=foo1'
+curl -s --request GET --url http://127.0.0.1:5000/users
+curl -s --request GET --url http://127.0.0.1:5000/user/Matt
+curl -s --request GET --url http://127.0.0.1:5000/user/Kirby
 ```
 
-### For GET request
+Now let test adding one, trying to add it again, changing it, and deleting it.
 
 ```bash
-curl --request GET --url 'http://localhost:8080/get?foo=bar&foz=baz'
+curl -s --request POST --url http://127.0.0.1:5000/user/Kirby --data 'age=42&occupation=slacker'
+curl -s --request POST --url http://127.0.0.1:5000/user/Kirby --data 'age=42&occupation=awesome dude'
+curl -s --request PUT --url http://127.0.0.1:5000/user/Kirby --data 'age=42&occupation=awesome dude'
+curl -s --request DELETE --url http://127.0.0.1:5000/user/Kirby
 ```
+
+## virtual environment
+
+I am experimenting with a pipenv/virtualenv  setup, instead of a global one.  I am currently working on a windows 10
+ environment, which requires fixing the paths for all the tools like pip and virtualenv.
+
+Set this up once.
+
+```cmd
+virtualenv venv
+```
+
+Now use the activate and deactivate scripts as needed.
+
+```cmd
+venv\Scripts\activate.bat
+venv\Scripts\deactivate.bat
+```
+
+On a unix box just source
+
+Source links
+
+<https://docs.python.org/3/tutorial/venv.html>
+
+<https://docs.python-guide.org/dev/virtualenvs/>
