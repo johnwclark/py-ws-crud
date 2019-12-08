@@ -66,3 +66,5 @@ Source links
 <https://docs.python.org/3/tutorial/venv.html>
 
 <https://docs.python-guide.org/dev/virtualenvs/>
+
+<https://code.visualstudio.com/docs/python/environments>
