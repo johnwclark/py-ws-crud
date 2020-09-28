@@ -39,32 +39,10 @@ curl -s --request PUT --url http://127.0.0.1:5000/user/Kirby --data 'age=42&occu
 curl -s --request DELETE --url http://127.0.0.1:5000/user/Kirby
 ```
 
-## virtual environment
+## Docker
 
->>> TODO
-
-I am experimenting with a pipenv/virtualenv  setup, instead of a global one.  I am currently working on a windows 10
- environment, which requires fixing the paths for all the tools like pip and virtualenv.
-
-Set this up once.
-
-```cmd
-virtualenv venv
-```
-
-Now use the activate and deactivate scripts as needed.
-
-```cmd
-venv\Scripts\activate.bat
-venv\Scripts\deactivate.bat
-```
-
-On a unix box just source
-
-Source links
-
-<https://docs.python.org/3/tutorial/venv.html>
-
-<https://docs.python-guide.org/dev/virtualenvs/>
-
-<https://code.visualstudio.com/docs/python/environments>
+I was originally doing this is a pipenv/venv setup, but 
+decided to move to docker.  It is just way less hassle and 
+setup, plus it is easier for an end user to setup and run 
+the sample code, without needing any extra tools or 
+permissions.
