@@ -49,16 +49,25 @@ permissions.
 
 ### Docker commands
 
+interactive shell to test on
+```cmd
+docker run -it alpine /bin/ash
+```
+
 if a build is out of space use 
+```cmd
 docker system prune
+```
 tags can have versions ie polls:1.0
 
+```cmd
 docker run polls [command]
 docker run polls ls -lR /opt/mysite/
 
-docker build --tag polls .
-docker run --publish 8787:8787 --detach --name ptest polls
+docker build --tag crud .
+docker run --publish 5000:5000 --detach --name ctest crud
 
 docker ps
-docker stop ptest
-docker rm ptest
+docker stop ctest
+docker rm ctest
+```

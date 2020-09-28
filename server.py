@@ -89,5 +89,6 @@ api.add_resource(User,"/user/<string:name>")
 api.add_resource(Users,"/users")
 
 #app.run(debug=True)
-app.run()
+#app.run()
+app.run(host='0.0.0.0',port=5000)
 
