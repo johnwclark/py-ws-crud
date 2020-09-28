@@ -46,3 +46,19 @@ decided to move to docker.  It is just way less hassle and
 setup, plus it is easier for an end user to setup and run 
 the sample code, without needing any extra tools or 
 permissions.
+
+### Docker commands
+
+if a build is out of space use 
+docker system prune
+tags can have versions ie polls:1.0
+
+docker run polls [command]
+docker run polls ls -lR /opt/mysite/
+
+docker build --tag polls .
+docker run --publish 8787:8787 --detach --name ptest polls
+
+docker ps
+docker stop ptest
+docker rm ptest
