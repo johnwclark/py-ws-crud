@@ -1,6 +1,6 @@
 # py-ws-crud
 
-a simple python crud web service
+a simple python crud web service, that runs in a docker container
 
 ## requirements
 
