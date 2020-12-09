@@ -7,8 +7,8 @@ COPY . .
 
 WORKDIR /opt/crud
 EXPOSE 5000
-#CMD python3 manage.py runserver 8787
 CMD ["python3", "server.py"]
-#CMD ["python3", "manage.py", "runserver", "0.0.0.0:8787"]
 
-# I can get it to install and run, but I can't connect
+# other ways, other ports
+#CMD python3 manage.py runserver 8787
+#CMD ["python3", "manage.py", "runserver", "0.0.0.0:8787"]
